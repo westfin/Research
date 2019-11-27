@@ -19,11 +19,7 @@ namespace Research.Trie
             _dictionary = new Dictionary<string, int>();
 
             _trie.GetOrAdd("Alene", () => 1);
-            _trie.GetOrAdd("Daniella", () => 2);
-            _trie.GetOrAdd("Cesium", () => 3);
             DictionaryGetOrAdd("Alene", () => 1);
-            DictionaryGetOrAdd("Daniella", () => 1);
-            DictionaryGetOrAdd("Cesium", () => 3);
         }
 
         [Benchmark]
