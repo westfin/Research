@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Research.Stack", "Research.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Research.Queue", "Research.Queue\Research.Queue.csproj", "{80B5C3F2-E51B-44FA-AD34-2290C48BF6E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Research.Trie", "Research.Trie\Research.Trie.csproj", "{426AECDB-9D10-4CF7-ACE3-8D9C314DD6F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Research.Trie", "Research.Trie\Research.Trie.csproj", "{426AECDB-9D10-4CF7-ACE3-8D9C314DD6F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Research.Rope", "Research.Rope\Research.Rope.csproj", "{EE259007-8F45-45FC-AD70-FF85BBB00B55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{426AECDB-9D10-4CF7-ACE3-8D9C314DD6F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{426AECDB-9D10-4CF7-ACE3-8D9C314DD6F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{426AECDB-9D10-4CF7-ACE3-8D9C314DD6F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE259007-8F45-45FC-AD70-FF85BBB00B55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE259007-8F45-45FC-AD70-FF85BBB00B55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE259007-8F45-45FC-AD70-FF85BBB00B55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE259007-8F45-45FC-AD70-FF85BBB00B55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
