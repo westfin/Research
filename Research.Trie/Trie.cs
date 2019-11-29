@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Research.Trie
 {
     /// <summary>
-    /// Префиксное дерево
+    /// Trie
     /// </summary>
     /// <typeparam name="TValue"></typeparam>
     public class Trie<TValue>
@@ -23,12 +23,12 @@ namespace Research.Trie
 
         public TValue GetOrAdd(ReadOnlySpan<char> key, Func<TValue> factory)
         {
-            _maxKeyLength = key.Length > _maxKeyLength ? key.Length : _maxKeyLength;
-
             if (factory == null)
             {
                 throw new ArgumentNullException(nameof(factory));
             }
+
+            _maxKeyLength = key.Length > _maxKeyLength ? key.Length : _maxKeyLength;
 
             var node = _root;
 
@@ -88,6 +88,10 @@ namespace Research.Trie
             return node._leaf;
         }
 
+        /// <summary>
+        /// Remove all values from trie.
+        /// </summary>
+        /// <remarks>All internally nodes still used</remarks>
         public void Clear()
         {
             Count = 0;
@@ -196,18 +200,20 @@ namespace Research.Trie
         }
 
         /// <summary>
-        /// Строит ключ, начиная с листа и двигаясь к корню
+        /// Build key
         /// </summary>
-        /// <param name="buffer">Буфер для ключа</param>
-        /// <param name="leaf">Лист</param>
-        /// <returns>Ключ</returns>
+        /// <param name="buffer">Buffer array for key</param>
+        /// <param name="leaf">Start leaf node</param>
+        /// <returns>Key</returns>
         private ReadOnlyMemory<char> YieldKey(Memory<char> buffer, Node<TValue> leaf)
         {
+            var n = leaf;
             var i = _maxKeyLength;
+
             while (leaf._parent != null)
             {
                 buffer.Span[--i] = leaf._symbol;
-                leaf = leaf._parent;
+                n = n._parent;
             }
 
             return buffer.Slice(i, _maxKeyLength - i);
